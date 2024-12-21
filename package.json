@@ -1,0 +1,24 @@
+{
+  "name": "repro-rspack",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development rspack serve",
+    "build": "pnpm run \"/^build:.*/\"",
+    "build:ok-simple": "cross-env NODE_ENV=production EXTERNALS=ok-simple rspack build",
+    "build:ok-callback": "cross-env NODE_ENV=production EXTERNALS=ok-callback rspack build",
+    "build:ok-cb-w-cb-getResolve": "cross-env NODE_ENV=production EXTERNALS=ok-cb-w-cb-getResolve rspack build",
+    "build:ok-explicit-async": "cross-env NODE_ENV=production EXTERNALS=ok-explicit-async rspack build",
+    "build:ko-implicit-async": "cross-env NODE_ENV=production EXTERNALS=ko-implicit-async rspack build",
+    "build:ko-explicit-async-w-async-getResolve": "cross-env NODE_ENV=production EXTERNALS=ko-explicit-async-w-async-getResolve rspack build",
+    "build:ko-explicit-async-w-cb-getResolve": "cross-env NODE_ENV=production EXTERNALS=ko-explicit-async-w-cb-getResolve rspack build"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^1.1.8",
+    "@rspack/core": "^1.1.8",
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "winston": "^3.17.0"
+  }
+}
